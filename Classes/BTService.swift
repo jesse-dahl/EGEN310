@@ -68,8 +68,7 @@ class BTService: NSObject, CBPeripheralDelegate {
       }
     }
   }
-  
-    // This function
+
   func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
     if (peripheral != self.peripheral) {
       // Wrong Peripheral
@@ -93,6 +92,8 @@ class BTService: NSObject, CBPeripheralDelegate {
     }
   }
   
+    // This function will be called from the sendPosition() function within the RemoteController.swift file
+    // This function passes UInt8 values to the BLE module to be parsed by my Arduino code
   func writePosition(_ position: UInt8) {
     // See if characteristic has been discovered before writing to it
     if self.positionCharacteristic != nil {

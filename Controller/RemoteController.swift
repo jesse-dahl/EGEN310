@@ -48,7 +48,7 @@ class RemoteController: UIViewController {
         print("Right button pressed");
     }
     
-    // This function sends the data from each button being pressed over to the Arduino for components to be controlled
+    // This function sends the data from each button being pressed over to the writePosition() function in the BTService class to then be send to the BLE module to be parsed by my Arduino code
     func sendPosition(_ position: UInt8) {
       
         // Only continue if no other send occurred in the last 0.1 seconds to avoid flooding the BLE connections
