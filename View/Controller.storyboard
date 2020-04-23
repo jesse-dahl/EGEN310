@@ -108,6 +108,27 @@
                                     <action selector="rightButtonPressed:" destination="OCj-xU-eAD" eventType="touchDown" id="PAi-Im-EyL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ql-Iy-5jG">
+                                <rect key="frame" x="334" y="656" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Sound"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ooe-cU-nN6">
+                                <rect key="frame" x="334" y="588" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Accelerate"/>
+                                <connections>
+                                    <action selector="accelerateButtonPressed:" destination="OCj-xU-eAD" eventType="touchUpInside" id="Lb8-jS-W4K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PwV-ax-Bmk">
+                                <rect key="frame" x="334" y="517" width="60" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Stop"/>
+                                <connections>
+                                    <action selector="stopButtonPressed:" destination="OCj-xU-eAD" eventType="touchUpInside" id="Wd8-jX-fNy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="TBb-70-9Hl"/>
@@ -118,4 +139,9 @@
             <point key="canvasLocation" x="982.60869565217399" y="120.65217391304348"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Accelerate" width="512" height="512"/>
+        <image name="Sound" width="145" height="144"/>
+        <image name="Stop" width="880" height="920"/>
+    </resources>
 </document>
