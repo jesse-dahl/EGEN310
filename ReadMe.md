@@ -18,10 +18,10 @@ Once you have all the prerequisites met, using our app is very simple
 2. Press the connect button to connect to the BLE module on the vehicle
 3. Once you are connected to the BLE module on the vehicle, you will be redirected to the controller app
 4. Everything on this controller is pretty self explanatory:
-* Press the up arrow button to move forward
-* Press the down arrow button to move backwards
-* Press the left arrow button to move left
-* Press the right arrow button to move right
-* Press the stop icon at the top to stop your vehicle
-* Press the sound icon to play a 'song' that is coded in our Arduino code
-* Press the speedometer icon to accelerate the vehicle
+  * Press the up arrow button to move forward
+  * Press the down arrow button to move backwards
+  * Press the left arrow button to move left
+  * Press the right arrow button to move right
+  * Press the stop icon at the top to stop your vehicle
+  * Press the sound icon to play a 'song' that is coded in our Arduino code
+  * Press the speedometer icon to accelerate the vehicle
