@@ -5,7 +5,7 @@ The app is composed of the Swift files that you will find in this repository. He
 
 1. The app starts off with the ViewController.swift file
 
-  ⋅⋅⋅1a) This file is paired with the Main.storyboard file for the UI. Once the user taps on the "Connect" button, the IBAction function "connectPressed" is called and it creates an object from the BTDiscovery file.
+     1a) This file is paired with the Main.storyboard file for the UI. Once the user taps on the "Connect" button, the IBAction function "connectPressed" is called and it creates an object from the BTDiscovery file.
 2. If you visit the BTDiscovery.swift file, you will find in my comments that this file is in charge of finding, connecting to, and disconnecting from a BLE module.
 
  a) This app uses Apple's CoreBluetooth package to actually do the heavy lifting of searching for and connecting to a BLE module. More info on CoreBluetooth can be found here: https://developer.apple.com/documentation/corebluetooth
