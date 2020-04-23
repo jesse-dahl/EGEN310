@@ -5,6 +5,7 @@
 //  Created by Jesse Dahl on 3/3/20.
 //  Copyright © 2020 Jesse Dahl. All rights reserved.
 //
+//  This file acts as the main functionality of the app. This will file basically controls the car by sending our Arduino specific signals to control the different components on the vehicle.
 
 import UIKit
 
@@ -47,6 +48,7 @@ class RemoteController: UIViewController {
         print("Right button pressed");
     }
     
+    // This function sends the data from each button being pressed over to the Arduino for components to be controlled
     func sendPosition(_ position: UInt8) {
       
         // Only continue if no other send occurred in the last 0.1 seconds to avoid flooding the BLE connections
@@ -85,6 +87,7 @@ class RemoteController: UIViewController {
       
     }
     
+    // This function along with the stopTimerTXDelay() function will reset the timer to allow a user to send more commands
     @objc func timerTXDelayElapsed() {
       self.allowTX = true
       self.stopTimerTXDelay()
