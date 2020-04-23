@@ -1,7 +1,7 @@
 ## This ReadMe is for a non-developer that would attempt to use this app
 **If you are a developer that would like to learn more about how this app works, read the DevReadME.md file**
 
-**Before you begin to use this app, there are a few prerequisites that you need to fulfill. These prerequisites are listed below: **
+**Before you begin to use this app, there are a few prerequisites that you need to fulfill. These prerequisites are listed below:**
 
 ### Prerequisites:
 1. Mac computer to open the code and upload it to your phone
