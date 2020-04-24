@@ -20,32 +20,46 @@ class RemoteController: UIViewController {
     }
     
     // This is tied to the stop button. Once it is pressed, the vehicle will halt
+    // This will basically send the value '0' to our Arduino, which when parsed by the Arduino code will halt the vehicle
     @IBAction func stopButtonPressed(_ sender: Any) {
         self.sendPosition(UInt8(0));
     }
     
     // This is tied to the "up button". Once it is pressed, the vehicle will move forward
+    // This will basically send the value '180' to our Arduino, which when parsed by the Arduino code will move the vehicle forward
     @IBAction func upButtonPressed(_ sender: Any) {
         self.sendPosition(UInt8(180));
-        print("Up button pressed");
     }
     
     // This is tied to the "accelerate" button. Once it is pressed, the vehicle will move faster
+    // This will basically send the value '240' to our Arduino, which when parsed by the Arduino code will accelerate the vehicle
     @IBAction func accelerateButtonPressed(_ sender: Any) {
         self.sendPosition(UInt8(240));
     }
     
     // This is tied to the "down button". Once it is pressed, the vehicle will move backwards
+    // This will basically send the value '90' to our Arduino, which when parsed by the Arduino code will move the vehicle backwards
     @IBAction func downButtonPressed(_ sender: Any) {
         self.sendPosition(UInt8(90));
     }
     
+    /**
+     Honestly, within prototype 2, I can't really implement the leftButtonPressed and rightButtonPressed functions.
+     I saved these for prototype 2; however, do due COVID-19 i can't implement these since I not only don't have the vehicle to test them on, but I also don't know how our mech-e plans on getting the vehicle to physically turn since this was also not discussed for prototype 1.
+     Hopefully the person grading this will understand the reason I can't implement these functions.
+     */
     @IBAction func leftButtonPressed(_ sender: Any) {
         print("Left button pressed");
     }
     
     @IBAction func rightButtonPressed(_ sender: Any) {
         print("Right button pressed");
+    }
+    
+    // This is mapped to the 'sound button'. Once it is pressed, The Imperial March should play from a piezo buzzer we have attached to the vehicle.
+    // This will send the value "200" to our Arduino, which when parsed by the Arduino will play The Imperial March
+    @IBAction func soundButtonPressed(_ sender: Any) {
+        self.sendPosition(UInt8(200));
     }
     
     // This function sends the data from each button being pressed over to the writePosition() function in the BTService class to then be send to the BLE module to be parsed by my Arduino code

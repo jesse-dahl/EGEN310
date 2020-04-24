@@ -5,7 +5,7 @@
 //  Created by Jesse Dahl on 3/7/20.
 //  Copyright © 2020 Jesse Dahl. All rights reserved.
 //
-//  This file is in charge of actually finding, connecting to, and disconnecting from BLE modules
+//  This file is in charge of finding, connecting to, and disconnecting from BLE modules. It uses the BTService file to do some heavy lifting and error checking
 
 import Foundation
 import UIKit
@@ -24,7 +24,7 @@ class BTDiscovery: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
       centralManager = CBCentralManager(delegate: self, queue: nil)
     }
     
-    // This function will begin to start looking for a BLE module with a UUID that matches that of the UUID for the BLE module on the vehicle
+    // This function will begin to start looking for a BLE module with a UUID that matches that of the UUID for the BLE module on the vehicle. It calls the startDiscoveringServices() function from the BTService file to start searching for devices
     func startScanning() {
       if let central = centralManager {
         central.scanForPeripherals(withServices: [BLEServiceUUID], options: nil)
@@ -94,7 +94,7 @@ class BTDiscovery: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
       self.peripheralBLE = nil
     }
     
-    
+    // A state manager that checks to see the status of the app and device
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
       switch (central.state) {
       case .poweredOff:

@@ -30,10 +30,12 @@ class BTService: NSObject, CBPeripheralDelegate {
     self.reset()
   }
   
+    // This function will search for a device that matches the BLEServiceUUID variable that I instantiated above
   func startDiscoveringServices() {
     self.peripheral?.discoverServices([BLEServiceUUID])
   }
   
+    // This will reset all BLE data that the app has saved so far. It will allow for the app to efficiently search for other devices
   func reset() {
     if peripheral != nil {
       peripheral = nil
@@ -43,8 +45,7 @@ class BTService: NSObject, CBPeripheralDelegate {
     self.sendBTServiceNotificationWithIsBluetoothConnected(false)
   }
   
-  // Mark: - CBPeripheralDelegate
-  
+  // This function is mainly for error checking to ensure the success of connecting to a BLE module.
   func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
     let uuidsForBTService: [CBUUID] = [PositionCharUUID]
     
@@ -62,6 +63,7 @@ class BTService: NSObject, CBPeripheralDelegate {
       return
     }
     
+    // This for loop looks through a queue of BLE devices and if a BLE device in queue matches the uuid we are looking for, it gets the devices characterists
     for service in peripheral.services! {
       if service.uuid == BLEServiceUUID {
         peripheral.discoverCharacteristics(uuidsForBTService, for: service)
@@ -69,6 +71,7 @@ class BTService: NSObject, CBPeripheralDelegate {
     }
   }
 
+    // This function also does some more error checking and sends a notifiction to the user if the app connects to the BLE module
   func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
     if (peripheral != self.peripheral) {
       // Wrong Peripheral

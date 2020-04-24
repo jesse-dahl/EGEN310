@@ -112,6 +112,9 @@
                                 <rect key="frame" x="334" y="656" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Sound"/>
+                                <connections>
+                                    <action selector="soundButtonPressed:" destination="OCj-xU-eAD" eventType="touchUpInside" id="sZt-0c-JXd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ooe-cU-nN6">
                                 <rect key="frame" x="334" y="588" width="60" height="60"/>
